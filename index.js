@@ -64,7 +64,7 @@ app.get("/", async (req, res) => {
 // });
 
 // Server listen on port 3000
-const PORT = 3000;
+const PORT = 3020;
 app.listen(PORT, () => {
   console.log('Server is running on port ', PORT);
 });
