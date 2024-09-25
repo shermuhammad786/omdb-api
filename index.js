@@ -2,6 +2,7 @@ import express from 'express';
 import cloudinary from './cloudinary-config.js'; // your Cloudinary configuration
 import multer from 'multer'; // handles file uploads
 import { unlinkSync } from 'fs'; // for file system operations
+import router from './routes/router.js';
 
 const app = express();
 
@@ -12,13 +13,10 @@ const app = express();
 
 
 
+app.use("/", router)
+
 app.get("/", async (req, res) => {
-  res.send("Hello World!")
-})
-app.get("/home", async (req, res) => {
-  const fetchDAta = await fetch("http://www.omdbapi.com/?i=tt3896198&apikey=3e44e47a")
-  const data = await fetchDAta.json()
-  res.send(data)
+  res.send("hello")
 })
 
 
