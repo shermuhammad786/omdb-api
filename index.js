@@ -13,6 +13,9 @@ const app = express();
 
 
 app.get("/", async (req, res) => {
+  res.send("Hello World!")
+})
+app.get("/home", async (req, res) => {
   const fetchDAta = await fetch("http://www.omdbapi.com/?i=tt3896198&apikey=3e44e47a")
   const data = await fetchDAta.json()
   res.send(data)
@@ -61,6 +64,7 @@ app.get("/", async (req, res) => {
 // });
 
 // Server listen on port 3000
-app.listen(3020, () => {
-  console.log('Server is running on port 3000');
+const PORT = 3000;
+app.listen(PORT, () => {
+  console.log('Server is running on port ', PORT);
 });
