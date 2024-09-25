@@ -3,11 +3,13 @@ import cloudinary from './cloudinary-config.js'; // your Cloudinary configuratio
 import multer from 'multer'; // handles file uploads
 import { unlinkSync } from 'fs'; // for file system operations
 import router from './routes/router.js';
+import cors from "cors";
 
 const app = express();
 
-
-
+app.use(cors({
+  origin: "*"
+}))
 
 
 
